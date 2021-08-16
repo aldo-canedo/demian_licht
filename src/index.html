@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Shapes Slideshow | Demo 1 | Codrops</title>
+		<meta name="description" content="An experimental slideshow using clip-path to create shape transitions between slides." />
+		<meta name="keywords" content="slideshow, clip-path, shape, gsap, javascript, web design" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" href="https://use.typekit.net/gpd2hso.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+	</head>
+	<body class="loading demo-1">
+		<main>
+			<div class="frame">
+				<h1 class="frame__title"> DEMIAN LICHT</h1>
+				<nav class="frame__links">
+					<a id="1" >Bio</a>
+					<a id="2" >Releases</a>
+					<a id="3" >Film and Video</a>
+					<a id="4" >International Press</a>
+					<a id="5" >Current Projects</a>
+				</nav>
+				
+				<nav class="frame__demos">
+					<a id="6" class="frame__demo frame__demo--current">Previous Shows</a>
+					<a id="7"  class="frame__demo">Ableton Live Certified Training</a>
+					<a id="8"  class="frame__demo">News</a>
+					<a id="9"  class="frame__demo">Contact</a>
+				</nav>
+				<nav class="slides-nav">
+					<!-- <button class="slides-nav__button slides-nav__button--prev" aria-label="Previous slide">
+						<svg><path d="M1.176 11.532a.5.5 0 00-.352.936c5.228 1.96 9.475 5.555 12.752 10.797a.5.5 0 00.848-.53c-3.39-5.424-7.81-9.163-13.248-11.203z"/><path d="M1.176 12.468a.5.5 0 01-.352-.936C6.052 9.572 10.3 5.978 13.576.735a.5.5 0 01.848.53c-3.39 5.424-7.81 9.163-13.248 11.203z"/><path d="M1 12.5a.5.5 0 110-1h53a.5.5 0 110 1H1z"/></svg>
+					</button>
+					<button class="slides-nav__button slides-nav__button--next" aria-label="Next slide">
+						<svg><path d="M53.824 11.532a.5.5 0 01.352.936c-5.228 1.96-9.475 5.555-12.752 10.797a.5.5 0 01-.848-.53c3.39-5.424 7.81-9.163 13.248-11.203z"/><path d="M53.824 12.468a.5.5 0 00.352-.936C48.948 9.572 44.7 5.978 41.424.735a.5.5 0 00-.848.53c3.39 5.424 7.81 9.163 13.248 11.203z"/><path d="M54 12.5a.5.5 0 100-1H1a.5.5 0 100 1h53z"/></svg>
+					</button> -->
+<!-- 					<div class="slides-nav__index">
+						<span class="slides-nav__index-current">
+							<span>1</span>
+						</span>
+						&mdash;
+						<span class="slides-nav__index-total">5</span>
+					</div> -->
+				</nav>
+			</div>
+			<div class="slideshow">
+				<figure class="slide slide--current">
+					<div class="slide__img-wrap"><div class="slide__img" style="background-image: url(img/1.jpg)"></div></div>
+					<figcaption class="slide__caption">
+						<h2 class="slides__caption-headline">
+							<span class="text-row"><span> <em>bioGraphy</em></span></span>
+<!-- 							<span class="text-row"><span><strong>sunset</strong> in her <em>gaze</em></span></span> -->
+						</h2>
+						<a class="slides__caption-link" href="#"><span>
+
+							<strong> Demian Licht</strong>  is an electronic music producer from Mexico. She has 
+been defining her unique way in electronic music with elegance & 
+flair of freshness on the world wide techno scene approaching most 
+recognized venues & events. Her creation skills you can discover 
+trough her self-released Ep’s Female Criminals Trilogy on her own 
+label  <strong>Motus Records</strong>   and through her live performances. 
+On 2020 she released her debut album <strong> DIE KRAFT </strong> which she will 
+premiere this year into an immersive multimedia live show in 
+collaboration with Mexican New Media studio  <strong  > Fragments and 
+	Forms.</strong>  
+She recently established  <strong>MOTUSOUNDGRID </strong> in Berlin, a 
+platform for her collaborations in the fields of multimedia, film, 
+contemporary dance & fashion interconnecting them through 
+sound. 
+Her work coincided with Demian’s qualification as an  <strong>Ableton </strong> 
+Certified Trainer, making her first (and as yet only) woman in Latin 
+America to hold such as certification.
+
+						</span></a>
+					</figcaption>
+				</figure>
+				<figure class="slide">
+					<div class="slide__img-wrap"><div class="slide__img" style="background-image: url(img/2.jpg)"></div></div>
+					<figcaption class="slide__caption">
+						<h2 class="slides__caption-headline">
+							<span class="text-row"><span> <em>Realeses</em></span></span>
+<!-- 							<span class="text-row"><span>a <em>desire</em> to <strong>engage</strong></span></span> -->
+						</h2>
+						<div class="slides__caption-link" href="#">
+							<span>DIE KRAFT (The Force in German) narrates as a sound script a 
+								contemporary interpretation of ‘El Camino 
+								Rojo’ (The read Road) given name to the path 
+								ancients cultures in Mexico used to invoke their 
+								ancestors and masters. Approaching their cosmogony as anthropological 
+								perspective.
+
+								<div id="prensa">
+									<a  href="#popup01" > - Der Atlas  </a>
+									
+										<div id="popup01" class="overlay">
+											<div class="popup">
+												<a class="close" href="#">&times;</a>
+												<h2 id="titulo_album">Der Atlas  </h2>
+												
+												<div class="content">
+													Single Release <br>
+													Motus Records  <br>
+													2021 
+
+													<a href="https://music.apple.com/us/album/der-atlas-single/1579763475?uo=4&app=itunes">
+													<img id="disco" src="../src/img/der.jpg" > 
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+		
+								<div>
+
+									<div id="prensa">
+										<a  href="#popup02" > - Die Kraft </a>
+										
+											<div id="popup02" class="overlay">
+												<div class="popup">
+													<h2>Die Kraft</h2>
+													<a class="close" href="#">&times;</a>
+													<div class="content">
+
+														Debut Album <br>
+														Motus Records <br>
+														2020 
+														<a href="https://daily.bandcamp.com/features/demian-licht-die-kraft-interview">
+														<img id="disco" src="../src/img/die.jpg" >
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+			
+									<div>
+
+										<div id="prensa">
+											<a  href="#popup03" > - ‘Ankaa’ & ‘Heyanajo </a>
+											
+												<div id="popup03" class="overlay">
+													<div class="popup">
+														<h2>‘Ankaa’ & ‘Heyanajo</h2>
+														<a class="close" href="#">&times;</a>
+														<div class="content">
+															VISITANT 001  <br>
+															12” Split Ep with Enyang Ha <br>
+															Phantom Limb <br>
+															2020 
+
+															<a href="https://thevinylfactory.com/news/phantom-limb-demian-licht-enyang-ha-12-vinyl/">
+																<img id="disco" src="../src/img/rec1.jpeg" >
+															</a>
+															
+														</div>
+													</div>
+												</div>
+											</div>
+				
+										<div>	
+									
+											<div id="prensa">
+												<a  href="#popup04" >-  ‘VV Cephei’ & ‘Algol</a>
+												
+													<div id="popup04" class="overlay">
+														<div class="popup">
+															<h2>‘VV Cephei’ & ‘Algol</h2>
+															<a class="close" href="#">&times;</a>
+															<div class="content">
+																ETXC003 <br>
+																Collaboration with Eomac <br>
+																Eotrax <br>
+																2019
+																<a href="https://boomkat.com/products/etxc003">
+																<img id="disco" src="../src/img/rec2.jpeg" >
+
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+					
+											<div>	
+									
+												<div id="prensa">
+													<a  href="#popup05" >-  Vök - ‘Hiding’ (Remix) </a>
+													
+														<div id="popup05" class="overlay">
+															<div class="popup">
+																<h2>Vök - ‘Hiding’ (Remix)</h2>
+																<a class="close" href="#">&times;</a>
+																<div class="content">
+																	Nettwerk<br>
+																	2018
+																	<a href="https://groove.de/2018/01/18/voek-trackpremiere-von-hiding-demian-licht-remix-nettwerk/">
+																	<img id="disco" src="../src/img/vok.png" >
+
+																	</a>
+																</div>
+															</div>
+														</div>
+													</div>
+						
+												<div>	
+													<div id="prensa">
+														<a  href="#popup06" > - Female Criminals Ep’s Trilogy </a>
+														
+															<div id="popup06" class="overlay">
+																<div class="popup">
+																	<h2>Female Criminals Ep’s Trilogy</h2>
+																	<a class="close" href="#">&times;</a>
+																	<div class="content">
+																		Motus Records <br>
+ 																			2016-2018
+
+																		<a href="https://open.spotify.com/artist/6r77JL5RhQY6KjprmIyNpp">
+
+																		<img id="disco" src="../src/img/rec5.jpg" >
+
+																		<img id="disco" src="../src/img/rec3.jpg" >
+
+																		<img id="disco" src="../src/img/rec4.jpg" >
+
+																		</a>
+
+																	</div>
+																</div>
+															</div>
+														</div>
+							
+													<div>	
+														
+													
+
+														
+									
+									
+									
+									
+								</div>
+
+							
+							
+							</span>
+						</div>
+							
+
+							
+					</figcaption>
+				</figure>
+				<figure class="slide">
+					<div class="slide__img-wrap"><div class="slide__img" style="background-image: url(img/3.jpg)"></div></div>
+					<figcaption class="slide__caption">
+						<h2 class="slides__caption-headline" id="film">
+							<span class="text-row"><span>  <em> Film and video</em> </span></span>
+<!-- 							<span class="text-row"><span>in ancient <em>dreams</em></span></span> -->
+
+
+						</h2>
+						<div class="slides__caption-link"  href="#"> 
+
+							
+							<div>
+							<a class=" button" href="#popup1" > DOMINA From Female Criminals Vol.I </a>
+							
+								<div id="popup1" class="overlay">
+									<div class="popup">
+										<h2>Domina</h2>
+										<a class="close" href="#">&times;</a>
+										<div class="content">
+											<iframe src="https://player.vimeo.com/video/585057896" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+											<br>
+
+											Music & Conceptualization: Demian Licht <br>
+												Director & DP: Ricardo Soto <br>
+												Production: Motus Records & Migala Films <br>
+												Editors: Demian Licht, Ricardo Soto & Alfonso Báez <br>
+												Post Producer: Alfonso Báez <br>
+												Country: Germany, Mexico<br>
+												Year: 2016<br>
+												Special thanks to: Lorea Arcelus, Eomac and the GIFF Residency Program. <br>
+												<br>
+
+											
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div>
+							<a class=" button" href="https://crackmagazine.net/2017/11/demian-licht-crimen-video/" > CRIMEN From Female Criminals Vol.II </a>
+							
+								
+							</div>	
+							<div>
+								<a class=" button" href="https://www.youtube.com/watch?v=pgQ5Wo4z9LQ" > AV Show at Scopitone Festival Nantes, France </a>
+								
+									
+							</div>
+							
+							
+								<div>
+									<a class=" button" href="https://www.youtube.com/watch?v=rk48DxpZQhU&t=6s" >BOILER ROOM  AV Show at Mexico city</a>
+									
+										
+									</div>	
+
+									<div>
+										<a class=" button" href="#popup2" > Der Atlas LIVE at Theater Im Delphi Berlin </a>
+										
+											<div id="popup2" class="overlay">
+												<div class="popup">
+													<h2>Der Atlas LIVE at Theater Im Delphi Berlin</h2>
+													<a class="close" href="#">&times;</a>
+													<div class="content">
+														<iframe src="https://player.vimeo.com/video/585016022" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+														<br>
+			
+														Performed on October 2020 at Theater im Delphi in Berlin for Schubert Schwanengesang Re-Imagined event by Pindrop.  <br>
+														Filmed by United We Stream.  <br>
+														Dancer Magda Vasko. <br>
+														Sample vocals by soprano Ana Schwedhelm. <br>
+														Music by Demian Licht. <br>
+														<br>
+			
+														
+													</div>
+												</div>
+											</div>
+										</div>		
+							
+						</div>	
+
+
+							
+
+
+						
+					</figcaption>
+				</figure>
+				<figure class="slide">
+					<div class="slide__img-wrap"><div class="slide__img" style="background-image: url(img/4.jpg)"></div></div>
+					<figcaption class="slide__caption">
+						<h2 class="slides__caption-headline">
+							<span class="text-row" > 
+								<span style="font-size: 0.9em;" ><em style="font-size: 0.9em;" > International Press</strong></em>
+
+								
+							</span>
+<!-- 							<span class="text-row"><span>when <em>passion</em> calls</span></span> -->
+						</h2>
+						<div class="slides__caption-link"  href="#">
+							<div id="prensa"><a href="https://www.ableton.com/en/blog/demian-licht-dark-light/">ABLETON FEATURE </a></div>
+
+							<div id="prensa"><a href="https://daily.bandcamp.com/features/demian-licht-die-kraft-interview">BANDCAMP DAILY  </a></div>
+							<div id="prensa"> <a href="https://ra.co/news/72644">RESIDENT ADVISOR  </a></div>
+							<div id="prensa"> <a href="https://www.keyimagazine.com/2021/01/08/meetdemian-licht-photos-by-keyi-studio-and-interview-by-izabella-chrobok/">KEYI MAGAZINE, BERLIN - SHANGHAI  </a></div>
+							<div id="prensa"> <a href="https://www.vice.com/es/article/ez983m/demian-licht-la-densidad-del-techno-mexicano-en-su-lado-femenino">VICE MEXICO  </a></div>
+							<div id="prensa"><a href="https://www.gonzocircus.com/demian-licht/">GONZO MAGAZINE, THE 
+								NETHERLANDS </a></div>
+							<div id="prensa"><a href="https://taz.de/Elektronik-Musikerin-Demian-Licht/!5700022/">TAZ JOURNAL, GERMANY </a></div>
+
+							<div id="prensa"><a href="https://mixmag.com.tr/read/demian-licht-die-kraft-album-instinto-music/">MIXMAG, TURKEY </a></div>
+							<div id="prensa"><a href="https://www.self-titledmag.com/demian-licht-die-kraft-album/">SELF-TITLED MAGAZINE, USA</a></div>
+							<div id="prensa"><a href="https://www.dj-lab.de/review-demian-licht-die-kraft-motus-records/">DJ LAB, GERMANY </a></div>
+							<div id="prensa"><a href="https://groove.de/2017/05/12/demian-licht-groove-podcast-106-motus-records/">GROOVE MAGAZINE, GERMANY </a></div>
+							<div id="prensa"><a href="https://www.thefader.com/2016/04/06/demian-licht-sin-premiere">THE FADER, USA </a></div>
+							<div id="prensa"><a href="https://chromespinnin.com/2017/09/16/meet-the-mexico-city-dj-thats-putting-her-own-spin-on-the-sinister-history-of-female-criminals/">CHROME, LA </a></div>
+							<div id="prensa"><a href="https://www.vice.com/en/article/78j3p4/demian-lichts-furia-female-criminals-stream">VICE, NYC </a></div>
+
+								
+							
+						</div>
+					</figcaption>
+				</figure>
+				<figure class="slide">
+					<div class="slide__img-wrap"><div class="slide__img" style="background-image: url(img/5.jpg)"></div></div>
+					<figcaption class="slide__caption">
+						<h2 class="slides__caption-headline">
+							<span class="text-row"><span> <em> Current <br>Projects</em></span></span>
+<!-- 							<span class="text-row"><span>when <strong>tears</strong> are gone</span></span> -->
+						</h2>
+						<div class="slides__caption-link" href="#">
+							<span>DIE KRAFT Multimedia -Live Show in collaboration 
+							with Mexican new media studio Fragments and Forms
+							emerged from Demian Licht debut album DIE
+							KRAFT released through her label Motus
+							Records on 2020</span>
+
+								
+							<div>
+								<br>
+								<a class=" button" href="#popup10" >DIE KRAFT LIVE SHOW  TEASER </a>
+
+
+								
+									<div id="popup10" class="overlay">
+										<div class="popup">
+											<h2>DIE KRAFT LIVE SHOW <br> TEASER</h2>
+											<a class="close" href="#">&times;</a>
+											<div class="content">
+												<iframe src="https://player.vimeo.com/video/430229048" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+												<br>
+	
+												Demian Licht in collaboration with Mexican new media studio FRAGMENTS AND FORMS. <br>
+												Music: 'Instinto' by Demian Licht from her upcoming debut album DIE KRAFT out on July 10th through Motus Records. <br>
+												Video: Studio.Baéz & AmbarÓptico. <br>
+												Artistic direction: Demian Licht. <br>
+												Produced by Motus Records & Fragments and Forms. <br>
+	
+												
+											</div>
+										</div>
+									</div>
+							</div>
+
+								
+
+
+							<a class=" button" href="#popup11" >BEHIND THE SCENES  </a>
+
+								
+								<div id="popup11" class="overlay">
+									<div class="popup">
+										<h2>BEHIND THE SCENES</h2>
+										<a class="close" href="#">&times;</a>
+										<div class="content">
+											<iframe src="https://player.vimeo.com/video/458272988" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+											<br>
+
+											Demian Licht in collaboration with Mexican New Media Studio Fragments_and_Forms presents: <br>
+											DIE KRAFT Live <br>
+											Music: Demian Licht <br>
+											Concept: Demian Licht & Fragments and Forms <br>
+											Project development: Fragments and Forms <br>
+											Manufacture: COSI Querétaro, México <br>
+											Video: Ambar González <br>
+											Video extracts: Studio Baéz <br>
+											Produced by MOTUSOUNDGRID <br>
+											México 2020  <br>
+											All rights reserved. <br>
+											Special thanks to LOOT Gallery Mx, Misael Guerrero, Deni Miyagi, Perla Huereca & Benito González. <br>
+
+											
+										</div>
+									</div>
+								</div>
+							
+
+						</div>
+					</figcaption>
+				</figure>
+        
+        <figure class="slide">
+					<div class="slide__img-wrap"><div class="slide__img" style="background-image: url(img/6.jpg)"></div></div>
+					<figcaption class="slide__caption">
+						<h2 class="slides__caption-headline">
+							<span class="text-row"><span> <em> Previous Shows</em></span></span>
+<!-- 							<span class="text-row"><span>when <strong>tears</strong> are gone</span></span> -->
+						</h2>
+						<div class="slides__caption-link" href="#">
+							<div id="prensa">LIVE at <strong>Tresor Club</strong>  for Female:pressure 2019 
+								Berlin, Germany
+							</div>
+							<div id="prensa">LIVE at  <strong>Klubnacht Berghain</strong>  2018 
+								Berlin, Germanyy
+							</div>
+							<div id="prensa">LIVE at  <strong>Ableton LOOP</strong>   for Dublab Radio streaming 2018 
+								L.A. California
+							</div>
+							<div id="prensa">LIVE at  <strong>The Soft Leather Club </strong>  2018 
+								L.A. California
+							</div>
+
+							<div id="prensa">AV Show at  <strong>Dada Club</strong>  2018 
+								Shanghai / Beijing, China
+							</div>
+							
+							<div id="prensa">LIVE at  <strong>Säule - Berghain </strong>   2017 
+								Berlin
+							</div>
+							<div id="prensa">AV Show at  <strong>Arnolfini Art Gallery</strong>  2017 
+								Bristol, UK
+							</div>
+							<div id="prensa">AV Show at <strong>Bongo Club for Hessle Audio 10 Years</strong>  2017 
+								Scotland, UK
+							</div>
+							<div id="prensa">AV Show at <strong>MaMA Festival</strong>  2017 
+								Paris, France
+							</div>
+							<div id="prensa">LIVE at  <strong> Finest Klubnacht Berghain </strong>  2016 
+								Berlin, Germany
+							</div>
+							<div id="prensa">LIVE at  <strong>Hertzflimmern</strong>  for Dual Year Mexico - Germany 2016 
+								Mexico City
+							</div>
+							<div id="prensa">LIVE at  <strong> Bossanova Civic Club </strong> for Discwoman 2016 
+								New York
+							</div>
+							
+							
+						</div>
+					</figcaption>
+				</figure>
+        
+        <figure class="slide">
+					<div class="slide__img-wrap"><div class="slide__img" style="background-image: url(img/ableton2.jpg)"></div></div>
+					<figcaption class="slide__caption">
+						<h2 class="slides__caption-headline">
+							<span class="text-row"><span><em>Training</em></span></span>
+<!-- 							<span class="text-row"><span>when <strong>tears</strong> are gone</span></span> -->
+						</h2>
+						<div class="slides__caption-link" href="#">
+							<span>If you would like to Request one to one or online electronic music production 
+							mentoring sessions in Ableton Live with Demian Licht please reach: 
+						 <br> <strong>contact@demianlicht.com</strong> <br>
+
+						 <div id="prensa">
+						 <a class="button" href="https://www.ableton.com/en/certified-training/demian-licht/"> Ableton Live Certified Trainer Profile</a>
+
+						 </div>
+
+						 
+
+							</span></div>
+					</figcaption>
+				</figure>
+        
+        <figure class="slide">
+					<div class="slide__img-wrap"><div class="slide__img" style="background-image: url(img/news.jpg)"></div></div>
+					<figcaption class="slide__caption">
+						<h2 class="slides__caption-headline">
+							<span class="text-row"><span> <em>News </em></span></span>
+<!-- 							<span class="text-row"><span>when <strong>tears</strong> are gone</span></span> -->
+						</h2>
+						<a class="slides__caption-link" href="#"><span>soon</span></a>
+					</figcaption>
+				</figure>
+        
+        <figure class="slide">
+					<div class="slide__img-wrap"><div class="slide__img" style="background-image: url(img/9.jpg)"></div></div>
+					<figcaption class="slide__caption">
+						<h2 class="slides__caption-headline">
+							<span class="text-row"><span><em> Contact </em></span></span>
+<!-- 							<span class="text-row"><span>when <strong>tears</strong> are gone</span></span> -->
+						</h2>
+						<div class="slides__caption-link" >
+							
+							<div id="prensa"><a href="https://open.spotify.com/artist/6r77JL5RhQY6KjprmIyNpp">SPOTIFY </a></div>
+							<div id="prensa"><a href="https://demianlicht.bandcamp.com/">BANDCAMP </a></div>
+							<div id="prensa"><a href="https://www.instagram.com/demianlicht/">INSTAGRAM </a></div>
+							<div id="prensa"><a href="https://vimeo.com/demianlichtofficial">VIMEO </a></div>
+							<div id="prensa"><a href="https://soundcloud.com/demianlicht">SOUNDCLOUD</a></div>
+							<div id="prensa"><a href="https://www.facebook.com/demianlichtmusic">FACEBOOK </a></div>
+							<div id="prensa"><a href="https://ra.co/dj/demianlicht">RESIDENT ADVISOR </a></div>
+							<div id="prensa" style="font-size: 1.2em;"><a href="mailto:contact@demianlicht.com">contact@demianlicht.com </a></div>
+
+						</div>
+					</figcaption>
+				</figure>
+			</div>
+		</main>
+		<script src="js/demo1/index.js"></script>
+	</body>
+</html>

@@ -1,0 +1,532 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 18px;
+}
+
+body {
+	cursor: crosshair;
+	margin: 0;
+	--color-text: #fff;
+	--color-bg: #000;
+	--color-link: #fff;
+	--color-link-hover: #fff;
+	--color-frame: #fff;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	font-family: rucksack, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Page Loader */
+.js .loading::before,
+.js .loading::after {
+	content: '';
+	position: fixed;
+	z-index: 1000;
+}
+
+.js .loading::before {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--color-bg);
+}
+
+.js .loading::after {
+	top: 50%;
+	left: 50%;
+	width: 60px;
+	height: 60px;
+	margin: -30px 0 0 -30px;
+	border-radius: 50%;
+	opacity: 0.4;
+	background: var(--color-link);
+	animation: loaderAnim 0.7s linear infinite alternate forwards;
+
+}
+
+@keyframes loaderAnim {
+	to {
+		opacity: 1;
+		transform: scale3d(0.5,0.5,1);
+	}
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-link);
+	outline: none;
+	position: relative;
+}
+
+a::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	background: currentColor;
+	left: 0;
+	bottom: -25%;
+	transform: scale3d(0,1,1);
+	opacity: 0;
+	transform-origin: 0% 50%;
+	transition: transform 0.3s, opacity 0s 0.3s;
+}
+
+a:hover::after {
+	opacity: 1;
+	transition: transform 0.8s;
+	transform: scale3d(1,1,1);
+}
+
+a:hover {
+	color: var(--color-link-hover);
+	outline: none;
+}
+
+/* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
+a:focus {
+	/* Provide a fallback style for browsers
+	 that don't support :focus-visible */
+	outline: none;
+	background: lightgrey;
+}
+
+a:focus:not(:focus-visible) {
+	/* Remove the focus indicator on mouse-focus for browsers
+	 that do support :focus-visible */
+	background: transparent;
+}
+
+a:focus-visible {
+	/* Draw a very noticeable focus style for
+	 keyboard-focus on browsers that do support
+	 :focus-visible */
+	outline: 2px solid red;
+	background: transparent;
+}
+
+#international{
+	margin-top: 200px;
+}
+
+.frame {
+	padding: 3rem 5vw;
+	text-align: center;
+	position: relative;
+	z-index: 1000;
+	color: var(--color-frame);
+}
+
+.frame a {
+	color: var(--color-frame);
+}
+
+.frame__title {
+	font-size: 2.25rem;
+	margin: 0 0 1rem;
+	font-weight: 400;
+	font-family: freight-big-pro, serif;
+	
+    
+}
+
+.frame__title span {
+	position: absolute;
+	pointer-events: none;
+	opacity: 0;
+}
+
+.frame__links {
+	display: inline;
+	font-family:freight-big-pro, serif ;
+	font-size: 1.2em;
+}
+
+.frame__links a:not(:last-child),
+.frame__demos a:not(:last-child) {
+	margin-right: 1rem;
+}
+
+.frame__demos {
+	margin: 1rem 0;
+	font-family:freight-big-pro, serif ;
+	font-size: 1.2em;
+}
+
+a.frame__demo--current,
+a.frame__demo--current:hover {
+	color: var(--color-text);
+}
+
+.slideshow {
+	width: 100vw;
+	height: calc(100vh - 13rem);
+	position: relative;
+	overflow: hidden;
+}
+
+.slide {
+	margin: 0;
+}
+
+.slide,
+.slide__img-wrap,
+.slide__img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.slide {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.js .slide {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.js .slide--current {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.slide__img-wrap {
+	will-change: transform;
+//	overflow: hidden;
+}
+
+.slide__img {
+	background-size: cover;
+	will-change: transform;
+	-webkit-backspace-visibility: hidden;
+}
+
+.slide__caption {
+	position: relative;
+	padding: 0 10vw;
+	padding-right: 500px;
+	//cursor: pointer;
+	width: 100%;
+}
+
+.slides__caption-headline {
+	font-size: 6.5vw;
+	font-size: clamp(2rem,6.5vw,6rem);
+	line-height: 0.9;
+	margin: 0;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+.text-row {
+	position: relative;
+	overflow: hidden;
+	display: block;
+	white-space: nowrap;
+}
+
+.text-row > span {
+	display: block;
+	position: relative;
+	padding: 0.5rem 0;
+}
+
+.slides__caption-headline {
+	font-weight: 300;
+}
+
+.slides__caption-headline em,
+.slides__caption-headline strong {
+	font-family: freight-big-pro, serif;
+	font-size: 6.75vw;
+	font-size: clamp(2rem,7vw,6rem);
+}
+
+.slides__caption-headline em {
+	font-weight: 400;
+	font-style: italic;
+}
+
+.slides__caption-headline strong {
+	font-weight: 400;
+}
+
+.slides__caption-link {
+	font-family: freight-big-pro, serif;
+	text-align: justify;
+	display: inline-block;
+	margin-top: 1rem;
+ 	width:70%;
+	text-indent: 0.2vw;
+/* 	font-size: 1.2rem; */
+	font-weight: 300;
+	font-size: clamp(1rem, 5vw, 0.5rem);
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+	width: 1px;
+	background-color: #000;
+  }
+
+.slides-nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.slides-nav__button {
+	display: block;
+//	cursor: default;
+	background: none;
+	border: 0;
+	width: 55px;
+	height: 24px;
+	padding: 0;
+	margin: 0 0.75rem;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.slides-nav__button:focus {
+	outline: none;
+}
+
+.slides-nav svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+	fill: #fff;
+}
+
+.slides-nav__index {
+	margin-left: 2rem;
+	white-space: nowrap;
+	color: var(--color-text);
+	border: 1px solid var(--color-text);
+	border-radius: 50%;
+	padding: 1rem 1.5rem;
+	text-align: center;
+	display: flex;
+	align-items: center;
+}
+
+.slides-nav__index > span {
+	width: 2rem;
+}
+
+.slides-nav__index-current {
+	position: relative;
+//	overflow: hidden;
+}
+
+.slides-nav__index-current span {
+	display: inline-block;
+}
+#film{
+
+//	margin-top: 700px;
+
+}
+
+
+#subfilm{
+	margin-top: 5px;
+}
+
+#prensa{
+	margin-top: 10px;
+}
+
+#disco{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media screen and (min-width: 53em) {
+	.frame {
+		position: fixed;
+		text-align: left;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		display: grid;
+		align-content: space-between;
+		width: 100%;
+		max-width: none;
+		height: 100vh;
+		padding: 2rem 3.5rem;
+		pointer-events: none;
+		grid-template-columns: 25% 50% 25%;
+		grid-template-rows: auto auto auto;
+		grid-template-areas: 'title links info'
+							            '... ... nav'
+							          '... demos ...';
+	}
+	.frame__title {
+		margin: 0;
+		grid-area: title;
+	}
+	.frame__demos {
+		margin: 0;
+		grid-area: demos;
+		justify-self: center;
+		align-self: end;
+	}
+	.frame__links {
+		grid-area: links;
+		padding: 0;
+		justify-self: center;
+	}
+	.frame__info {
+		grid-area: info;
+		justify-self: end;
+   		align-self: start;
+	}
+	.slides-nav {
+		grid-area: nav;
+		justify-self: end;
+		align-self: end;
+	}
+	.frame a,
+	.frame button {
+		pointer-events: auto;
+	}
+	.slideshow {
+		height: 100vh;
+	}
+	.slides-nav {
+		margin-bottom: -1rem;
+        transform: rotate(90deg);
+	}
+	.slides-nav__index {
+		margin-right: -2rem;
+	}
+	.slideshow {
+		background: var(--color-bg);
+	}
+
+}
+
+
+
+/*  pop up */
+
+
+
+h1 {
+	text-align: center;
+	font-family: Tahoma, Arial, sans-serif;
+//	color: #06D85F;
+	margin: 80px 0;
+  }
+  
+  .box {
+	width: 40%;
+	margin: 0 auto;
+	background: rgba(255,255,255,0.2);
+	padding: 35px;
+	border: 2px solid #fff;
+	border-radius: 20px/50px;
+	background-clip: padding-box;
+	text-align: center;
+  }
+  
+  .button {
+	/* font-size: 1em;
+	padding: 10px;
+	color: #fff;
+	border: 2px solid #06D85F;
+	border-radius: 20px/50px; */
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.3s ease-out;
+  }
+  .button:hover {
+	background: #ffffff73;
+	
+  }
+  
+  .overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.8);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+  }
+  .overlay:target {
+	visibility: visible;
+	opacity: 1;
+  }
+
+  #popup06{
+	  overflow: scroll;
+  }
+
+  .popup {
+	margin: 70px auto;
+	padding: 20px;
+	background: rgb(3, 3, 3);
+	border-radius: 5px;
+	width: 45%;
+	position: relative;
+	transition: all 5s ease-in-out;
+  }
+
+ 
+  .popup h2 {
+	margin-top: 0;
+	color: rgb(253, 253, 253);
+	font-family: Tahoma, Arial, sans-serif;
+	text-align: center;
+	font-family: freight-big-pro, serif;
+  }
+  .popup .close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 50px;
+	
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+  }
+  .popup .close:hover {
+	color: #d80606;
+  }
+  .popup .content {
+	max-height: 30%;
+	overflow: auto;
+	color: rgb(255, 255, 255);
+	font-size: 0.7em;
+	
+	text-align: center;
+  }
+  
+  @media screen and (max-width: 700px){
+	.box{
+	  width: 70%;
+	}
+	.popup{
+	  width: 70%;
+	}
+  }
